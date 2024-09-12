@@ -8,19 +8,16 @@ interface Props {
 const { title, href, size = 'large' } = Astro.props
 
 const sizeClasses = {
-  small: 'text-sm',
-  large: 'text-base',
+  small: 'text-sm w-40 w-40',
+  large: 'text-base w-64 h-64',
 }
 ---
 
 <a
-  class="flex my-6 w-max"
+  class=`bg-theme-white p-10 text-base text-theme-dark aspect-square rounded-full uppercase font-serif grid place-items-center relative after:absolute after:inset-0 after:bg-theme-accent/15 after:rounded-full after:z-0 after:opacity-0 after:transition-all after:duration-300 after:w-full after:h-full hover:after:scale-150 hover:after:opacity-100 ${sizeClasses[size]}`
   href={href}
 >
-  <span
-    class=`bg-theme-white p-10 text-base text-theme-dark aspect-square rounded-full uppercase font-serif grid place-items-center relative after:absolute after:inset-0 after:bg-theme-accent/15 after:rounded-full after:z-0 after:opacity-0 after:transition-all after:duration-300 after:w-full after:h-full hover:after:scale-150 hover:after:opacity-100 ${sizeClasses[size]}
-    `
-  >
+  <span>
     {title}
   </span>
 </a>

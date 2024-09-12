@@ -1,9 +1,41 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import DisplayButton from '../components/DisplayButton.astro'
 ---
 
-<Layout title="Welcome to Astro.">
-  <main>
-    <h1 class="text-3xl text-accent font-serif">Explore</h1>
+<Layout
+  backgroundImage="home"
+  title="Welcome to Astro."
+>
+  <main
+    class="flex flex-col lg:grid grid-cols-2 md:w-5/6 mx-auto text-center lg:text-left gap-20 lg:gap-0 lg:pt-40"
+  >
+    <div class="flex flex-col gap-1">
+      <h5 class="uppercase text-md text-theme-accent">
+        So, you want to travel to
+      </h5>
+      <h1 class="uppercase text-2xl lg:text-3xl font-serif">Space</h1>
+      <p class="text-base">
+        Let’s face it; if you want to go to space, you might as well genuinely
+        go to outer space and not hover kind of on the edge of it. Well sit
+        back, and relax because we’ll give you a truly out of this world
+        experience!
+      </p>
+    </div>
+    <div class="hidden sm:flex justify-center lg:justify-end lg:items-end">
+      <DisplayButton
+        title="Explore"
+        href="/"
+        size="large"
+      />
+    </div>
+
+    <div class="flex mt-4 sm:hidden justify-center">
+      <DisplayButton
+        title="Explore"
+        href="/"
+        size="small"
+      />
+    </div>
   </main>
 </Layout>

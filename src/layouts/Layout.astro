@@ -6,11 +6,38 @@ import '@fontsource/barlow-condensed/400.css'
 import '@fontsource/barlow-condensed/500.css'
 import '@fontsource/barlow-condensed/600.css'
 import '@fontsource/barlow-condensed/700.css'
+import DesktopNavigation from '../components/DesktopNavigation.astro'
+import MobileNavigation from '../components/MobileNavigation.astro'
+
 interface Props {
   title: string
+  backgroundImage: 'home' | 'destination' | 'crew' | 'technology'
 }
 
-const { title } = Astro.props
+const { title, backgroundImage } = Astro.props
+
+const links = [
+  {
+    title: 'Home',
+    href: '/',
+    number: '00',
+  },
+  {
+    title: 'Destination',
+    href: '/destination',
+    number: '01',
+  },
+  {
+    title: 'Crew',
+    href: '/crew',
+    number: '02',
+  },
+  {
+    title: 'Technology',
+    href: '/technology',
+    number: '03',
+  },
+]
 ---
 
 <!doctype html>
@@ -36,18 +63,21 @@ const { title } = Astro.props
     />
     <title>{title}</title>
   </head>
-  <body class="bg-theme-dark text-theme-white">
-    <nav class="py-4 px-16">
-      <ul class="flex justify-between items-center">
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/design-system">Design System</a>
-        </li>
-      </ul>
-    </nav>
-    <main class="py-4 px-16">
+  <body class="bg-theme-dark text-theme-white relative">
+    {backgroundImage === 'home' && (
+      <div
+        class="absolute top-0 left-0 w-screen h-screen bg-cover bg-center bg-no-repeat -z-10 hidden md:block"
+        style="background-image: url(/assets/home/background-home-desktop.jpg)"
+      >
+      </div>
+      <div
+        class="absolute top-0 left-0 w-screen h-screen bg-cover bg-center bg-no-repeat -z-10 block md:hidden"
+        style="background-image: url(/assets/home/background-home-mobile.jpg)"
+      >
+      </div>
+    )}
+    <DesktopNavigation links={links} />
+    <main class="py-4 px-8 lg:px-16">
       <slot />
     </main>
   </body>
