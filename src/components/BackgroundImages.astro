@@ -1,0 +1,85 @@
+---
+interface Props {
+  backgroundImage: 'home' | 'destination' | 'crew' | 'technology'
+}
+
+const { backgroundImage } = Astro.props
+---
+
+{backgroundImage === 'home' && (
+  <div
+    class="absolute top-0 left-0 w-screen h-screen bg-cover bg-center bg-no-repeat -z-10 hidden lg:block"
+    style="background-image: url(/assets/home/background-home-desktop.jpg)"
+  >
+  </div>
+  <div
+    class="absolute top-0 left-0 w-screen h-screen bg-cover bg-center bg-no-repeat -z-10 hidden md:block lg:hidden"
+    style="background-image: url(/assets/home/background-home-tablet.jpg)"
+  >
+  </div>
+  <div
+    class="absolute top-0 left-0 w-screen h-screen bg-cover bg-center bg-no-repeat -z-10 block md:hidden"
+    style="background-image: url(/assets/home/background-home-mobile.jpg)"
+  >
+  </div>
+)}
+
+{backgroundImage === 'destination' && (
+  <div
+    class="absolute top-0 left-0 w-screen h-screen bg-cover bg-center bg-no-repeat -z-10 hidden lg:block"
+    style="background-image: url(/assets/destination/background-destination-desktop.jpg)"
+  >
+  </div>
+  <div
+    class="absolute top-0 left-0 w-screen h-screen bg-cover bg-center bg-no-repeat -z-10 hidden md:block lg:hidden"
+    style="background-image: url(/assets/destination/background-destination-tablet.jpg)"
+  >
+  </div>
+  <div
+    class="absolute top-0 left-0 w-screen h-screen bg-cover bg-center bg-no-repeat -z-10 block md:hidden"
+    style="background-image: url(/assets/destination/background-destination-mobile.jpg)"
+  >
+  </div>
+)}
+
+{backgroundImage === 'crew' && (
+  <div
+    class="absolute top-0 left-0 w-screen h-screen bg-cover bg-center bg-no-repeat -z-10 hidden lg:block"
+    style="background-image: url(/assets/crew/background-crew-desktop.jpg)"
+  >
+  </div>
+  <div
+    class="absolute top-0 left-0 w-screen h-screen bg-cover bg-center bg-no-repeat -z-10 hidden md:block lg:hidden"
+    style="background-image: url(/assets/crew/background-crew-tablet.jpg)"
+  >
+  </div>
+  <div
+    class="absolute top-0 left-0 w-screen h-screen bg-cover bg-center bg-no-repeat -z-10 block md:hidden"
+    style="background-image: url(/assets/crew/background-crew-mobile.jpg)"
+  >
+  </div>
+)}
+
+{backgroundImage === 'technology' && (
+  <div
+    class="absolute top-0 left-0 w-screen h-screen bg-cover bg-center bg-no-repeat -z-10 hidden lg:block"
+    style="background-image: url(/assets/technology/background-technology-desktop.jpg)"
+  >
+  </div>
+  <div
+    class="absolute top-0 left-0 w-screen h-screen bg-cover bg-center bg-no-repeat -z-10 hidden md:block lg:hidden"
+    style="background-image: url(/assets/technology/background-technology-tablet.jpg)"
+  >
+  </div>
+  <div
+    class="absolute top-0 left-0 w-screen h-screen bg-cover bg-center bg-no-repeat -z-10 block md:hidden"
+    style="background-image: url(/assets/technology/background-technology-mobile.jpg)"
+  >
+  </div>
+)}
+
+
+
+
+
+    

@@ -7,8 +7,7 @@ import '@fontsource/barlow-condensed/500.css'
 import '@fontsource/barlow-condensed/600.css'
 import '@fontsource/barlow-condensed/700.css'
 import DesktopNavigation from '../components/DesktopNavigation.astro'
-
-
+import BackgroundImages from '../components/BackgroundImages.astro'
 interface Props {
   title: string
   backgroundImage: 'home' | 'destination' | 'crew' | 'technology'
@@ -64,18 +63,7 @@ const links = [
     <title>{title}</title>
   </head>
   <body class="bg-theme-dark text-theme-white relative">
-    {backgroundImage === 'home' && (
-      <div
-        class="absolute top-0 left-0 w-screen h-screen bg-cover bg-center bg-no-repeat -z-10 hidden lg:block"
-        style="background-image: url(/assets/home/background-home-desktop.jpg)"
-      >
-      </div>
-      <div
-        class="absolute top-0 left-0 w-screen h-screen bg-cover bg-bottom sm:bg-center bg-no-repeat -z-10 block lg:hidden"
-        style="background-image: url(/assets/home/background-home-mobile.jpg)"
-      >
-      </div>
-    )}
+    <BackgroundImages backgroundImage={backgroundImage} />
     <DesktopNavigation links={links} />
     <main class="py-4 px-8 lg:px-16">
       <slot />
