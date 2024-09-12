@@ -9,11 +9,16 @@ import NumberButtons from '../components/NumberButtons.astro'
 ---
 
 <Layout title="D.S.A. - Design System Astro">
-  <h1
-    class="text-accent text-base text-theme-accent flex justify-end uppercase font-sans-cond tracking-2"
+  <div
+    class="flex justify-between items-center text-accent text-base text-theme-accent uppercase font-sans-cond tracking-2"
   >
-    Style Guide
-  </h1>
+    <a
+      class="underline underline-offset-8 hover:text-theme-white focus:text-theme-white transition-all duration-300"
+      href="/"
+      >Back Home</a
+    >
+    <h1>Style Guide</h1>
+  </div>
 
   <!-- Colors -->
   <section class="flex flex-col gap-5 mt-10 mb-20">
@@ -376,7 +381,7 @@ import NumberButtons from '../components/NumberButtons.astro'
         2
       </button>
     </div>
-    
+
     <h5 class="uppercase mt-5 font-sans-cond text-base text-theme-accent">
       Number Buttons Interactive Example
     </h5>
