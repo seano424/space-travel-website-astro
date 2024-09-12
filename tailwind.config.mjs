@@ -13,7 +13,7 @@ export default {
 			},
 			container: {
 				center: true,
-				padding: '1rem',
+				padding: '2rem',
 			},
 			letterSpacing: {
 				"1": '2.7px',

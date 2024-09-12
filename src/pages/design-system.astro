@@ -10,11 +10,84 @@ import Layout from '../layouts/Layout.astro'
   </h1>
 
   <!-- Colors -->
-  <section>
+  <section class="flex flex-col gap-10 mt-5">
     <h2 class="text-md uppercase font-sans-cond tracking-2 flex gap-6">
       <span class="text-theme-accent/25 font-medium">01</span>
       Colors
     </h2>
+
+    <div class="flex flex-col gap-5">
+      <h5 class="uppercase font-sans-cond text-base text-theme-accent">Blue</h5>
+      <!-- divider -->
+      <div class="h-[1px] bg-theme-accent/25 w-full"></div>
+      <div class="grid grid-cols-2 gap-4 text-base">
+        <div class="flex flex-col gap-2">
+          <div
+            class="bg-theme-dark border border-theme-accent/25 flex flex-col gap-1 pt-12 pl-5 pb-5 font-serif"
+          >
+            <p class="text-theme-accent/50 uppercase">#0B0D17</p>
+            <p class="uppercase text-theme-white">Blue-900</p>
+          </div>
+          <div class="flex flex-col gap-1">
+            <h5 class="uppercase text-theme-accent">
+              <span class="text-theme-accent/50 font-medium pr-16">HSL</span> 230°,
+              35%, 7%
+            </h5>
+            <h5 class="uppercase text-theme-accent">
+              <span class="text-theme-accent/50 font-medium pr-16">RGB</span> 11,
+              13, 23
+            </h5>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <div
+            class="bg-theme-accent border border-theme-accent/25 flex flex-col gap-1 pt-12 pl-5 pb-5 font-serif"
+          >
+            <p class="text-theme-dark/60 uppercase">#D0D6F9</p>
+            <p class="uppercase text-theme-dark">Blue-100</p>
+          </div>
+          <div class="flex flex-col gap-1">
+            <h5 class="uppercase text-theme-accent">
+              <span class="text-theme-accent/50 font-medium pr-16">HSL</span> 231°,
+              77%, 90%
+            </h5>
+            <h5 class="uppercase text-theme-accent">
+              <span class="text-theme-accent/50 font-medium pr-16">RGB</span> 208,
+              214, 249
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-5">
+      <h5 class="uppercase font-sans-cond text-base text-theme-accent">
+        White
+      </h5>
+      <!-- divider -->
+      <div class="h-[1px] bg-theme-accent/25 w-full"></div>
+      <div class="grid grid-cols-2 gap-4 text-base">
+        <div class="flex flex-col gap-2">
+          <div
+            class="bg-theme-white border border-white flex flex-col gap-1 pt-12 pl-5 pb-5 font-serif"
+          >
+            <p class="text-theme-dark/60 uppercase">#FFFFFF</p>
+            <p class="uppercase text-theme-dark">White</p>
+          </div>
+          <div class="flex flex-col gap-1">
+            <h5 class="uppercase text-theme-accent">
+              <span class="text-theme-accent/50 font-medium pr-16">HSL</span> 0°,
+              0%, 100%
+            </h5>
+            <h5 class="uppercase text-theme-accent">
+              <span class="text-theme-accent/50 font-medium pr-16">RGB</span> 255,
+              255, 255
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- <div class="flex flex-col gap-2 py-5">
       <div class="flex gap-2">
