@@ -2,6 +2,7 @@
 import { MobileMenuButton } from './MobileMenuButton.tsx'
 import { MobileMenu } from './MobileMenu.tsx'
 const currentPath = Astro.url.pathname
+import clsx from 'clsx'
 
 interface Props {
   links: {
@@ -39,7 +40,12 @@ const { links } = Astro.props
       links.map((link) => (
         <li>
           <a
-            class="uppercase relative font-sans-cond text-base text-theme-white/80 after:content-[''] after:absolute after:-bottom-3 after:bg-theme-accent/25 after:w-full after:h-[3px] after:left-0 after:opacity-0 after:transition-all after:duration-300 hover:after:opacity-100 after:focus:opacity-100 after:focus:bg-theme-white"
+            class={clsx(
+              "uppercase relative font-sans-cond text-base text-theme-white/80 after:content-[''] after:absolute after:-bottom-3 after:bg-theme-accent/25 after:w-full after:h-[3px] after:left-0 after:opacity-0 after:transition-all after:duration-300 hover:after:opacity-100 after:focus:opacity-100 after:focus:bg-theme-white",
+              currentPath === link.href
+                ? 'after:opacity-100 after:bg-theme-white'
+                : ''
+            )}
             href={link.href}
           >
             <span class="font-medium pr-1">{link.number}</span> {link.title}

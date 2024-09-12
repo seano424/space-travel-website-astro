@@ -26,7 +26,7 @@ export const MobileMenu = ({ pathname }: Props) => {
         links.map((link) => (
           <a
             key={link.title}
-            className={clsx("uppercase relative font-sans-cond text-base text-theme-white/90 after:content-[''] tracking-1 after:absolute after:-right-0 after:bg-theme-accent/25 after:w-[3px] after:h-full after:opacity-0 after:transition-all after:duration-300 hover:after:opacity-100 after:focus:opacity-100 after:focus:bg-theme-white",
+            className={clsx("uppercase relative font-sans-cond text-base text-theme-white/90 after:content-[''] tracking-1 after:absolute after:right-2 after:bg-theme-accent/25 after:w-[3px] after:h-full after:opacity-0 after:transition-all after:duration-300 hover:after:opacity-100 after:focus:opacity-100 after:focus:bg-theme-white",
               pathname === link.href ? 'after:opacity-100 after:bg-theme-white' : ''
             )}
             href={link.href}
