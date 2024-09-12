@@ -1,4 +1,6 @@
 ---
+import { MobileMenuButton } from './MobileMenuButton.tsx'
+import { MobileMenu } from './MobileMenu.tsx'
 interface Props {
   links: {
     title: string
@@ -19,9 +21,17 @@ const { links } = Astro.props
       />
     </a>
   </div>
-  <div class="hidden xl:block absolute h-[2px] w-[35rem] right-[55rem] z-10 bg-theme-accent/25"></div>
+
+  <!-- Navigation line -->
+  <div
+    aria-hidden="true"
+    class="hidden xl:block absolute h-[2px] w-[35rem] right-[55rem] z-10 bg-theme-accent/25"
+  >
+  </div>
+
+  <!-- Navigation -->
   <ul
-    class="flex gap-10 py-8 xl:pr-20 xl:bg-theme-accent/10 xl:pl-[24rem] xl:backdrop-blur-sm pr-5"
+    class="hidden md:flex gap-10 py-8 xl:pr-20 xl:bg-theme-accent/10 xl:pl-[24rem] xl:backdrop-blur-sm pr-5"
   >
     {
       links.map((link) => (
@@ -36,4 +46,10 @@ const { links } = Astro.props
       ))
     }
   </ul>
+
+  <!-- Mobile menu button -->
+  <MobileMenuButton client:load />
+
+  <!-- Mobile menu -->
+  <MobileMenu client:load />
 </nav>
