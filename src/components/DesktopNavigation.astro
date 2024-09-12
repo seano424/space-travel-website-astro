@@ -3,6 +3,7 @@ interface Props {
   links: {
     title: string
     href: string
+    number: string
   }[]
 }
 
@@ -16,7 +17,7 @@ const { links } = Astro.props
         class="uppercase relative font-sans-cond text-base text-theme-white after:content-[''] after:absolute after:-bottom-3 after:bg-theme-accent/25 after:w-full after:h-[3px] after:left-0 after:opacity-0 after:transition-all after:duration-300 hover:after:opacity-100 after:focus:opacity-100 after:focus:bg-theme-white"
         href={link.href}
       >
-        {link.title}
+        <span class="font-bold pr-1">{link.number}</span> {link.title}
       </a>
     ))
   }

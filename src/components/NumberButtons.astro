@@ -1,0 +1,19 @@
+---
+interface Props {
+  buttons: {
+    number: string
+  }[]
+}
+
+const { buttons } = Astro.props
+---
+
+<div class="flex gap-5">
+  {
+    buttons.map((button) => (
+      <button class="bg-theme-dark rounded-full border-2 border-theme-accent/25 w-16 h-16 text-theme-white font-bold hover:border-theme-accent/50 focus:border-theme-white focus:bg-theme-white focus:text-theme-dark transition-all duration-300">
+        {button.number}
+      </button>
+    ))
+  }
+</div>

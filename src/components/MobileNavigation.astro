@@ -1,0 +1,24 @@
+---
+interface Props {
+  links: {
+    title: string
+    number: string
+    href: string
+  }[]
+}
+
+const { links } = Astro.props
+---
+
+<nav class="flex flex-col gap-5">
+  {
+    links.map((link) => (
+      <a
+        class="uppercase relative font-sans-cond text-base text-theme-white after:content-[''] after:absolute after:-right-0 after:bg-theme-accent/25 after:w-[3px] after:h-full after:opacity-0 after:transition-all after:duration-300 hover:after:opacity-100 after:focus:opacity-100 after:focus:bg-theme-white"
+        href={link.href}
+      >
+        <span class="font-bold">{link.number}</span> {link.title}
+      </a>
+    ))
+  }
+</nav>

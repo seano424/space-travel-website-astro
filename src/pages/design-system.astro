@@ -3,9 +3,12 @@ import Layout from '../layouts/DesignSystemLayout.astro'
 import NumberedHeader from '../components/NumberedHeader.astro'
 import DisplayButton from '../components/DisplayButton.astro'
 import DesktopNavigation from '../components/DesktopNavigation.astro'
+import MobileNavigation from '../components/MobileNavigation.astro'
+import TabsMenu from '../components/TabsMenu.astro'
+import NumberButtons from '../components/NumberButtons.astro'
 ---
 
-<Layout title="Design System">
+<Layout title="D.S.A. - Design System Astro">
   <h1
     class="text-accent text-base text-theme-accent flex justify-end uppercase font-sans-cond tracking-2"
   >
@@ -297,10 +300,89 @@ import DesktopNavigation from '../components/DesktopNavigation.astro'
 
     <DesktopNavigation
       links={[
-        { title: 'Idle', href: '#' },
-        { title: 'Hover', href: '#' },
-        { title: 'Active', href: '#' },
+        { title: 'Idle', number: '00', href: '#' },
+        { title: 'Hover', number: '01', href: '#' },
+        { title: 'Active', number: '02', href: '#' },
       ]}
+    />
+
+    <h5 class="uppercase mt-5 font-sans-cond text-base text-theme-accent">
+      Mobile Navigation Static Example
+    </h5>
+
+    <nav class="flex flex-col gap-5">
+      <a
+        class="uppercase relative font-sans-cond text-base text-theme-white after:content-[''] after:absolute after:-right-0 after:bg-white after:w-[3px] after:h-full"
+        href="#"
+      >
+        <span class="font-bold">00</span> Active
+      </a>
+      <a
+        class="uppercase relative font-sans-cond text-base text-theme-white after:content-[''] after:absolute after:-right-0 after:bg-theme-accent/25 after:w-[3px] after:h-full after:opacity-100 after:transition-all after:duration-300 hover:after:opacity-100"
+        href="#"
+      >
+        <span class="font-bold">01</span> Hover
+      </a>
+      <a
+        class="uppercase relative font-sans-cond text-base text-theme-white after:content-[''] after:absolute after:-right-0 after:bg-theme-accent/25 after:w-[3px] after:h-full after:opacity-0 after:transition-all after:duration-300 hover:after:opacity-100 after:focus:opacity-100 after:focus:bg-theme-white"
+        href="#"
+      >
+        <span class="font-bold">02</span> Idle
+      </a>
+    </nav>
+
+    <h5 class="uppercase mt-5 font-sans-cond text-base text-theme-accent">
+      Mobile Navigation Dynamic Example
+    </h5>
+
+    <MobileNavigation
+      links={[
+        { title: 'Active', number: '00', href: '#' },
+        { title: 'Hover', number: '01', href: '#' },
+        { title: 'Idle', number: '02', href: '#' },
+      ]}
+    />
+
+    <h5 class="uppercase mt-5 font-sans-cond text-base text-theme-accent">
+      Tabs Menu
+    </h5>
+
+    <TabsMenu
+      links={[
+        { title: 'Active', number: '00' },
+        { title: 'Hover', number: '01' },
+        { title: 'Idle', number: '02' },
+      ]}
+    />
+
+    <h5 class="uppercase mt-5 font-sans-cond text-base text-theme-accent">
+      Number Buttons Static Example
+    </h5>
+
+    <div class="flex gap-5">
+      <button
+        class="bg-theme-dark rounded-full border-2 border-theme-accent/25 w-16 h-16 text-theme-white font-bold hover:border-theme-accent/50 focus:border-theme-white focus:bg-theme-white focus:text-theme-dark transition-all duration-300"
+      >
+        0
+      </button>
+      <button
+        class="bg-theme-dark rounded-full border-2 border-theme-accent/50 w-16 h-16 text-theme-white font-bold"
+      >
+        1
+      </button>
+      <button
+        class="rounded-full border-2 bg-theme-white border-theme-white w-16 h-16 text-theme-dark font-bold"
+      >
+        2
+      </button>
+    </div>
+    
+    <h5 class="uppercase mt-5 font-sans-cond text-base text-theme-accent">
+      Number Buttons Interactive Example
+    </h5>
+
+    <NumberButtons
+      buttons={[{ number: '0' }, { number: '1' }, { number: '2' }]}
     />
   </section>
 </Layout>
