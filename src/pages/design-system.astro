@@ -1,5 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Layout from '../layouts/DesignSystemLayout.astro'
+import NumberedHeader from '../components/NumberedHeader.astro'
 ---
 
 <Layout title="Design System">
@@ -10,11 +11,11 @@ import Layout from '../layouts/Layout.astro'
   </h1>
 
   <!-- Colors -->
-  <section class="flex flex-col gap-10 mt-5">
-    <h2 class="text-md uppercase font-sans-cond tracking-2 flex gap-6">
-      <span class="text-theme-accent/25 font-medium">01</span>
-      Colors
-    </h2>
+  <section class="flex flex-col gap-5 mt-10 mb-20">
+    <NumberedHeader
+      title="Colors"
+      number="01"
+    />
 
     <div class="flex flex-col gap-5">
       <h5 class="uppercase font-sans-cond text-base text-theme-accent">Blue</h5>
@@ -88,13 +89,141 @@ import Layout from '../layouts/Layout.astro'
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- <div class="flex flex-col gap-2 py-5">
-      <div class="flex gap-2">
-        <div class="w-10 h-10 bg-theme-dark"></div>
-        <div class="w-10 h-10 bg-theme-accent"></div>
-        <div class="w-10 h-10 bg-theme-white"></div>
-      </div>
-    </div> -->
+  <section class="flex flex-col gap-5 mb-20">
+    <NumberedHeader
+      title="Typography"
+      number="02"
+    />
+    <div class="grid xl:grid-cols-2 gap-5">
+      <article class="flex flex-col gap-20">
+        <div class="flex flex-col gap-5">
+          <div class="font-sans-cond text-base">
+            <h5 class="text-theme-accent">Text Preset 1 - Bellefair Regular</h5>
+            <h5 class="text-theme-accent/50">
+              114px - 171.9% Line Height (Normal) 0px Letter Spacing
+            </h5>
+          </div>
+          <!-- divider -->
+          <div class="h-[1px] bg-theme-accent/25 w-full"></div>
+          <h2 class="text-3xl font-serif uppercase">Earth</h2>
+        </div>
+
+        <div class="flex flex-col gap-5">
+          <div class="font-sans-cond text-base">
+            <h5 class="text-theme-accent">Text Preset 2 - Bellefair Regular</h5>
+            <h5 class="text-theme-accent/50">
+              100px - 114.6% Line Height (Normal) - 0px Letter Spacing
+            </h5>
+          </div>
+          <!-- divider -->
+          <div class="h-[1px] bg-theme-accent/25 w-full"></div>
+          <h2 class="text-2xl font-serif uppercase">Venus</h2>
+        </div>
+
+        <div class="flex flex-col gap-5">
+          <div class="font-sans-cond text-base">
+            <h5 class="text-theme-accent">Text Preset 3 - Bellefair Regular</h5>
+            <h5 class="text-theme-accent/50">
+              56px - 64.2% Line Height (Normal) - 0px Letter Spacing
+            </h5>
+          </div>
+          <!-- divider -->
+          <div class="h-[1px] bg-theme-accent/25 w-full"></div>
+          <h2 class="text-xl font-serif uppercase">JUPITER & SATURN</h2>
+        </div>
+
+        <div class="flex flex-col gap-5">
+          <div class="font-sans-cond text-base">
+            <h5 class="text-theme-accent">Text Preset 4- Bellefair Regular</h5>
+            <h5 class="text-theme-accent/50">
+              32px - 37.5% Line Height (Normal) - 0px Letter Spacing
+            </h5>
+          </div>
+          <!-- divider -->
+          <div class="h-[1px] bg-theme-accent/25 w-full"></div>
+          <h2 class="text-lg font-serif uppercase">URANUS, NEPTUNE & PLUTO</h2>
+        </div>
+
+        <div class="flex flex-col gap-5">
+          <div class="font-sans-cond text-base">
+            <h5 class="text-theme-accent">Text Preset 5 - Bellefair Regular</h5>
+            <h5 class="text-theme-accent/50">
+              28px - 33.3% Line Height (Normal) - 0px Letter Spacing
+            </h5>
+          </div>
+          <!-- divider -->
+          <div class="h-[1px] bg-theme-accent/25 w-full"></div>
+          <h2 class="text-md font-serif uppercase">
+            HAUMEA, SEDNA, ERIS, & CERES
+          </h2>
+        </div>
+      </article>
+
+      <article class="flex flex-col gap-20">
+        <div class="flex flex-col gap-5">
+          <div class="font-sans-cond text-base">
+            <h5 class="text-theme-accent">Text Preset 6 - Bellefair Regular</h5>
+            <h5 class="text-theme-accent/50">
+              28px - 32.1% Line Height (Normal) - 0px Letter Spacing
+            </h5>
+          </div>
+          <!-- divider -->
+          <div class="h-[1px] bg-theme-accent/25 w-full"></div>
+          <h2 class="text-base font-serif uppercase">384,400 km</h2>
+        </div>
+
+        <div class="flex flex-col gap-5">
+          <div class="font-sans-cond text-base">
+            <h5 class="text-theme-accent">Text Preset 7 - Bellefair Regular</h5>
+            <h5 class="text-theme-accent/50">
+              14px - 16.8% Line Height (Normal) - 2px Letter Spacing
+            </h5>
+          </div>
+          <!-- divider -->
+          <div class="h-[1px] bg-theme-accent/25 w-full"></div>
+          <h2 class="text-sm font-serif uppercase">AVG. DISTANCE</h2>
+        </div>
+
+        <div class="flex flex-col gap-5">
+          <div class="font-sans-cond text-base">
+            <h5 class="text-theme-accent">Text Preset 8 - Bellefair Regular</h5>
+            <h5 class="text-theme-accent/50">
+              16px - 19.2% Line Height (Normal) - 2px Letter Spacing
+            </h5>
+          </div>
+          <!-- divider -->
+          <div class="h-[1px] bg-theme-accent/25 w-full"></div>
+          <h2 class="text-2xs font-serif uppercase">EUROPA</h2>
+        </div>
+
+        <div class="flex flex-col gap-5">
+          <div class="font-sans-cond text-base">
+            <h5 class="text-theme-accent">Text Preset 8 - Bellefair Regular</h5>
+            <h5 class="text-theme-accent/50">
+              16px - 19.2% Line Height (Normal) - 2px Letter Spacing
+            </h5>
+          </div>
+          <!-- divider -->
+          <div class="h-[1px] bg-theme-accent/25 w-full"></div>
+          <p class="text-2xs">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus
+            hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque,
+            aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula
+            sollicitudin laoreet viverra, tortor libero sodales leo, eget
+            blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse
+            potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi
+            neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium,
+            ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget
+            blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse
+            potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi
+            neque, aliquet vel, dapibus id, mattis vel, nisi.
+          </p>
+        </div>
+      </article>
+    </div>
   </section>
 </Layout>
