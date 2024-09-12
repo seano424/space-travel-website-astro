@@ -1,6 +1,8 @@
 ---
 import { MobileMenuButton } from './MobileMenuButton.tsx'
 import { MobileMenu } from './MobileMenu.tsx'
+const currentPath = Astro.url.pathname
+
 interface Props {
   links: {
     title: string
@@ -51,5 +53,8 @@ const { links } = Astro.props
   <MobileMenuButton client:load />
 
   <!-- Mobile menu -->
-  <MobileMenu client:load />
+  <MobileMenu
+    pathname={currentPath}
+    client:load
+  />
 </nav>

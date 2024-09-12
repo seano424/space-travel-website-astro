@@ -2,7 +2,11 @@ import clsx from 'clsx';
 import { menuStore } from '../menuStore';
 import { useStore } from '@nanostores/react';
 
-export const MobileMenu = () => {
+interface Props {
+  pathname?: string
+}
+
+export const MobileMenu = ({ pathname }: Props) => {
   const isMenuOpen = useStore(menuStore)
   const links = [
     { title: 'Home', href: '/', number: '00' },
@@ -22,7 +26,9 @@ export const MobileMenu = () => {
         links.map((link) => (
           <a
             key={link.title}
-            className="uppercase relative font-sans-cond text-base text-theme-white/90 after:content-[''] tracking-1 after:absolute after:-right-0 after:bg-theme-accent/25 after:w-[3px] after:h-full after:opacity-0 after:transition-all after:duration-300 hover:after:opacity-100 after:focus:opacity-100 after:focus:bg-theme-white"
+            className={clsx("uppercase relative font-sans-cond text-base text-theme-white/90 after:content-[''] tracking-1 after:absolute after:-right-0 after:bg-theme-accent/25 after:w-[3px] after:h-full after:opacity-0 after:transition-all after:duration-300 hover:after:opacity-100 after:focus:opacity-100 after:focus:bg-theme-white",
+              pathname === link.href ? 'after:opacity-100 after:bg-theme-white' : ''
+            )}
             href={link.href}
           >
             <span className="font-bold pr-1">{link.number}</span> {link.title}
