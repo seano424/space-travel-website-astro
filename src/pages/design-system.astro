@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/DesignSystemLayout.astro'
 import NumberedHeader from '../components/NumberedHeader.astro'
+import DisplayButton from '../components/DisplayButton.astro'
+import DesktopNavigation from '../components/DesktopNavigation.astro'
 ---
 
 <Layout title="Design System">
@@ -225,5 +227,80 @@ import NumberedHeader from '../components/NumberedHeader.astro'
         </div>
       </article>
     </div>
+  </section>
+
+  <section class="flex flex-col gap-5 mb-20">
+    <NumberedHeader
+      title="Interactive Elements"
+      number="03"
+    />
+
+    <div class="flex flex-col gap-5">
+      <h5 class="uppercase font-sans-cond text-base text-theme-accent">
+        Display Button
+      </h5>
+      <!-- divider -->
+      <div class="h-[1px] bg-theme-accent/25 w-full"></div>
+
+      <h5 class="uppercase font-sans-cond text-base text-theme-accent">
+        Large
+      </h5>
+      <DisplayButton
+        title="Explore"
+        href="#"
+        size="large"
+      />
+
+      <h5 class="uppercase font-sans-cond text-base text-theme-accent">
+        Small
+      </h5>
+      <DisplayButton
+        title="Explore"
+        href="#"
+        size="small"
+      />
+    </div>
+
+    <h5 class="uppercase font-sans-cond text-base text-theme-accent">
+      Desktop and Tablet Navigation
+    </h5>
+
+    <div class="h-[1px] bg-theme-accent/25 w-full"></div>
+
+    <h5 class="uppercase font-sans-cond text-base text-theme-accent">
+      Desktop and Tablet Navigation Static Example
+    </h5>
+
+    <nav class="flex gap-5">
+      <a
+        class="uppercase relative font-sans-cond text-base text-theme-white after:content-[''] after:absolute after:-bottom-3 after:bg-theme-accent/25 after:w-full after:h-[3px] after:left-0 after:opacity-0 after:transition-all after:duration-300 hover:after:opacity-100"
+        href="#"
+        >Idle</a
+      >
+      <a
+        id="hovered"
+        class="uppercase relative font-sans-cond text-base text-theme-white after:content-[''] after:absolute after:-bottom-3 after:bg-theme-accent/25 after:w-full after:h-[3px] after:left-0 after:opacity-100 after:transition-all after:duration-300 hover:after:opacity-100"
+        href="#"
+        >Hover</a
+      >
+      <a
+        id="active"
+        class="uppercase relative font-sans-cond text-base text-theme-white after:content-[''] after:absolute after:-bottom-3 after:bg-theme-white after:w-full after:h-[3px] after:left-0 after:opacity-100 after:transition-all after:duration-300 hover:after:opacity-100 after:focus:opacity-100 after:focus:bg-theme-white"
+        href="#"
+        >Active</a
+      >
+    </nav>
+
+    <h5 class="uppercase mt-5 font-sans-cond text-base text-theme-accent">
+      Desktop and Tablet Navigation Interactive Example
+    </h5>
+
+    <DesktopNavigation
+      links={[
+        { title: 'Idle', href: '#' },
+        { title: 'Hover', href: '#' },
+        { title: 'Active', href: '#' },
+      ]}
+    />
   </section>
 </Layout>
