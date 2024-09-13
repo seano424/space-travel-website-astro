@@ -6,7 +6,7 @@ import '@fontsource/barlow-condensed/400.css'
 import '@fontsource/barlow-condensed/500.css'
 import '@fontsource/barlow-condensed/600.css'
 import '@fontsource/barlow-condensed/700.css'
-import DesktopNavigation from '../components/DesktopNavigation.astro'
+import Navigation from '../components/Navigation.astro'
 import BackgroundImages from '../components/BackgroundImages.astro'
 interface Props {
   title: string
@@ -64,7 +64,7 @@ const links = [
   </head>
   <body class="bg-theme-dark text-theme-white relative">
     <BackgroundImages backgroundImage={backgroundImage} />
-    <DesktopNavigation links={links} />
+    <Navigation links={links} />
     <main class="py-4 px-8 lg:px-16">
       <slot />
     </main>

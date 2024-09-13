@@ -1,12 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import DestinationComponent from '../components/Destination.tsx'
+import NumberedHeader from '../components/NumberedHeader.astro'
 ---
 
 <Layout
   title="Destination"
   backgroundImage="destination"
 >
-  <main>
-    <h1>Destination</h1>
-  </main>
+  <div class="flex flex-col gap-10 items-center justify-center w-max mx-auto lg:items-start">
+    <NumberedHeader
+      title="Pick your destination"
+      number="01"
+    />
+    <DestinationComponent client:load />
+  </div>
 </Layout>
