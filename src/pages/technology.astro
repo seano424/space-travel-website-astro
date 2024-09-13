@@ -1,12 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import NumberedHeader from '../components/NumberedHeader.astro'
+import TechnologyComponent from '../components/Technology.tsx'
 ---
 
 <Layout
+  unsetPadding
   title="Technology"
   backgroundImage="technology"
 >
-  <main>
-    <h1>Technology</h1>
-  </main>
+  <div class="flex flex-col items-center lg:gap-10 lg:items-start mb-10 lg:pl-16">
+    <NumberedHeader
+      title="Space launch 101"
+      number="03"
+    />
+  </div>
+
+  <TechnologyComponent client:load />
 </Layout>
