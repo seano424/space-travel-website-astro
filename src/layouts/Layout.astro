@@ -62,7 +62,9 @@ const links = [
     />
     <title>{title}</title>
   </head>
-  <body class="bg-theme-dark text-theme-white relative">
+  <body
+    class="bg-theme-dark text-theme-white relative flex flex-col min-h-screen"
+  >
     <BackgroundImages backgroundImage={backgroundImage} />
     <Navigation links={links} />
     <main class="py-4 px-8 lg:px-16">

@@ -1,12 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import CrewComponent from '../components/Crew.jsx'
+import NumberedHeader from '../components/NumberedHeader.astro'
 ---
 
 <Layout
   title="Crew"
   backgroundImage="crew"
 >
-  <main>
-    <h1>Crew</h1>
-  </main>
+  <div class="flex flex-col lg:gap-10 items-center justify-center lg:items-start">
+    <div
+      class="max-w-xl lg:max-w-7xl mx-auto text-center lg:text-left flex flex-col gap-10 items-center lg:items-start"
+    >
+      <NumberedHeader
+        title="Meet your crew"
+        number="02"
+      />
+      <CrewComponent client:load />
+    </div>
+  </div>
 </Layout>
