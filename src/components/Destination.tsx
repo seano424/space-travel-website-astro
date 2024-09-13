@@ -19,7 +19,7 @@ export const Destination = () => {
           {json.destinations.map((d) => (
             <li key={d.name}>
               <button
-                className={clsx("uppercase text-theme-accent relative font-sans-cond text-base after:content-[''] after:absolute after:-bottom-3 after:bg-theme-accent/25 after:w-full after:h-[3px] after:left-0 after:opacity-0 after:transition-all after:duration-300 hover:after:opacity-100 after:focus:opacity-100 after:focus:bg-theme-white", {
+                className={clsx("uppercase text-theme-accent relative font-sans-cond text-base after:content-[''] after:absolute after:-bottom-3 after:bg-theme-accent/25 after:w-full after:h-[3px] after:left-0 after:opacity-0 after:transition-all after:duration-300 hover:after:opacity-100 after:focus:opacity-100", {
                   'after:opacity-100 text-theme-white after:bg-theme-white': d.name === destination.name
                 })}
                 onClick={() => setDestination(d)}
